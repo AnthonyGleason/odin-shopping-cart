@@ -1,12 +1,33 @@
-import { BrowserRouter,Routes,Route } from "react-router-dom";
-import App from "./App.js";
+import { BrowserRouter,Routes,Route,redirect} from "react-router-dom";
+import { useEffect, useState } from "react";
+
+//import components
+import App from './App.js';
+import Nav from './Nav.js';
+import Footer from "./Footer.js";
+import Shop from './Shop.js';
+import Cart from './Cart.js';
 
 export default function RouteSwitch(){
+  //creates a shopping cart with an empty array
+  const {cart,setCart} = useState([]);
+
+  //sets initial load page to be /home
+  useEffect(()=>{
+    redirect('/home');
+  },[])
+
   return(
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<App />} />
-      </Routes>
-    </BrowserRouter>
+    <>
+      <Nav />
+      <BrowserRouter>
+        <Routes>
+          <Route path='/home' element={<App cart={cart} />} />
+          <Route path='/shop' element={<Shop cart={cart} setCart={setCart} />} />
+          <Route path='/cart' element={<Cart cart={cart} setCart={setCart} />} />
+        </Routes>
+      </BrowserRouter>
+      <Footer />
+    </>
   )
 };
