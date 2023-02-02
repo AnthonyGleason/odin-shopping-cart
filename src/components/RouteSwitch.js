@@ -7,10 +7,24 @@ import Nav from './Nav.js';
 import Footer from "./Footer.js";
 import Shop from './Shop.js';
 import Cart from './Cart.js';
+import About from './About.js';
 
 export default function RouteSwitch(){
   //creates a shopping cart with an empty array
-  const {cart,setCart} = useState([]);
+  const [cart,setCart] = useState([
+  {
+    itemID: 0,
+    itemName: 'testa'
+  },
+  {
+    itemID: 1,
+    itemName: 'testb'
+  },
+  {
+    itemID: 2,
+    itemName: 'testc'
+  },
+]);
 
   //sets initial load page to be /home
   useEffect(()=>{
@@ -22,8 +36,9 @@ export default function RouteSwitch(){
       <Nav />
       <BrowserRouter>
         <Routes>
-          <Route path='/home' element={<App cart={cart} />} />
+          <Route path='/home' element={<App />} />
           <Route path='/shop' element={<Shop cart={cart} setCart={setCart} />} />
+          <Route path='/about' element={<About />} />
           <Route path='/cart' element={<Cart cart={cart} setCart={setCart} />} />
         </Routes>
       </BrowserRouter>
