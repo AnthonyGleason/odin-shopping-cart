@@ -6,7 +6,6 @@ export default function Nav(){
       <a href="/home">
         <div className='nav-title'>Store</div>
       </a>
-      
       <div className='nav-buttons'>
         <ul>
           <a href='/home'><li>Home</li></a>

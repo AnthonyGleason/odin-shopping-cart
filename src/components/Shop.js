@@ -8,11 +8,27 @@ export default function Shop(props){
   [cart,setCart] = [props.cart,props.setCart];
   return(
     <div className='shop'>
-      {cart.map((item)=>{
-        return(
-          <ShopItem key={item.itemID} itemID={item.itemID} itemName={item.itemName} />
-        )
-      })}
+        <ShopItem 
+        key={0}
+        itemID={0} 
+        itemName={'Pencils'}
+        cart={cart}
+        setCart={setCart}
+        />
+        <ShopItem 
+        key={1}
+        itemID={1} 
+        itemName={'Erasers'}
+        cart={cart}
+        setCart={setCart}
+        />
+        <ShopItem 
+        key={2}
+        itemID={2} 
+        itemName={'Markers'}
+        cart={cart}
+        setCart={setCart}
+        />
    </div>
   )
 }

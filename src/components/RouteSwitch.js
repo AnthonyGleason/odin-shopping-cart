@@ -11,20 +11,7 @@ import About from './About.js';
 
 export default function RouteSwitch(){
   //creates a shopping cart with an empty array
-  const [cart,setCart] = useState([
-  {
-    itemID: 0,
-    itemName: 'testa'
-  },
-  {
-    itemID: 1,
-    itemName: 'testb'
-  },
-  {
-    itemID: 2,
-    itemName: 'testc'
-  },
-]);
+  const [cart,setCart] = useState([]);
 
   //sets initial load page to be /home
   useEffect(()=>{

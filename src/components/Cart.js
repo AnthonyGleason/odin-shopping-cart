@@ -1,9 +1,9 @@
 import {React} from 'react';
 
-export default function Cart(){
+export default function Cart(props){
   return(
     <div className='cart'>
-      hello from cart
+      {console.log(props.cart)}
     </div>
   )
 }
