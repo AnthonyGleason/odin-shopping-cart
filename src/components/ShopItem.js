@@ -7,16 +7,16 @@ export default function ShopItem(props){
     <div className="shop-item">
       <div className="item-info">
         <div>{name}</div>
-        <div>${(price*quantity)}</div>
+        <div>${(Math.round(100*(price*quantity))/100)}</div>
       </div>
-      <input onChange={(e)=>{handleQuantityChange(parseInt(e.target.value), setQuantity)}} className="item-quantity" />
+      <input type={'number'} min={1} max={9} value={quantity} onChange={(e)=>{handleQuantityChange(parseInt(e.target.value),setQuantity)}} className="item-quantity" />
       <button onClick={()=>{handleAddToCart(quantity,cart,setCart,ID,name,price)}} className="add-to-cart">Add to cart</button>
     </div>
   )
 };
 
-let handleQuantityChange = function(input,setQuantity){
-  setQuantity(input);
+let handleQuantityChange = function(val,setQuantity){
+  setQuantity(val);
 };
 
 let handleAddToCart = function(quantity,cart,setCart,ID,name,price){
