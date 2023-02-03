@@ -20,8 +20,8 @@ let handleQuantityChange = function(input,setQuantity){
 };
 
 let handleAddToCart = function(quantity,cart,setCart,ID,name,price){
-  //item exists in cart
-  //item doesnt already exist in cart
+  //run if item exists in cart
+  //runs if item doesnt already exist in cart
   setCart(cart.concat({
     ID: ID,
     name: name,

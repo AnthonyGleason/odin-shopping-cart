@@ -57,7 +57,7 @@ export default function Shop(){
   return(
     <div className="shop">
       <div className="shop-sticky">
-        <Link to={'/checkout'} state={cart} className='shop-sticky-text' ><li>Checkout</li></Link>
+        <Link to={'/checkout'} state={cart} className='shop-sticky-text'>Checkout</Link>
       </div>
       <ShopContainer shopArray={shopArray} cart={cart} setCart={setCart} />
       <Cart className={'cart'} cart={cart} setCart={setCart} />
