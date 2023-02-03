@@ -20,12 +20,12 @@ let handleQuantityChange = function(input,setQuantity){
 };
 
 let handleAddToCart = function(quantity,cart,setCart,ID,name,price){
-  let newCart = cart;
-  newCart.push({
+  //item exists in cart
+  //item doesnt already exist in cart
+  setCart(cart.concat({
     ID: ID,
     name: name,
     price: price,
     quantity: quantity,
-  })
-  setCart(newCart);
+  }));
 };

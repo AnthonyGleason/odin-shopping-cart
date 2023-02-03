@@ -2,8 +2,7 @@ import React from "react";
 import CartItem from './CartItem.js';
 
 export default function Cart(props){
-  const [cart,setCart]=[props.cart,props.setCart];
-  console.log('updated');
+  let [cart,setCart]=[props.cart,props.setCart]
   return(
     <div className="cart">
       {cart.map((item)=>{

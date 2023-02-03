@@ -6,7 +6,6 @@ import Cart from "./Cart.js";
 
 export default function Shop(){
   const [cart,setCart] = useState([]);
-
   let shopArray = [
     {
       ID: 0,
