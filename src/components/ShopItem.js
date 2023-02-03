@@ -16,6 +16,7 @@ export default function ShopItem(props){
 };
 
 let handleQuantityChange = function(val,setQuantity){
+  if(val>9||val<1) return 0;
   setQuantity(val);
 };
 
