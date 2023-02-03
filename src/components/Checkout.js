@@ -1,6 +1,6 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import CartItem from "./CartItem";
+import CheckoutItem from "./CheckoutItem";
 
 export default function Checkout(){
   let location = useLocation();
@@ -9,7 +9,7 @@ export default function Checkout(){
     <div className='checkout'>
       {cart.map((item)=>{
         return(
-          <CartItem name={item.name} ID={item.ID} key={item.ID} price={item.price} quantity={item.quantity} />
+          <CheckoutItem name={item.name} ID={item.ID} key={item.ID} price={item.price} quantity={item.quantity} />
         )
       })}
       <div className="total">{calcTotal(cart)}</div>
