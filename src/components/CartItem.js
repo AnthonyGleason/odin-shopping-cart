@@ -7,8 +7,8 @@ export default function CartItem(props){
   return(
     <div className="cart-item">
       <div className="item-name">{name}</div>
-      <div className="item-price">${(Math.round(100*(price*quantity))/100)}</div>
-      <div className="item-quantity">{quantity}</div>
+      <div className="item-price">Subtotal: ${(Math.round(100*(price*quantity))/100)}</div>
+      <div className="item-quantity">{quantity} in cart</div>
       <button className="remove-item" onClick={()=>{handleItem(setCart,cart,ID)}}>Remove from cart</button>
     </div>
   )
