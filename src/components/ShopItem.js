@@ -2,15 +2,16 @@ import {React, useState} from "react";
 
 export default function ShopItem(props){
   const [quantity, setQuantity] = useState(1);
-  const [cart,setCart,ID,name,price] = [props.cart,props.setCart,props.ID,props.name,props.price];
+  const [cart,setCart,ID,name,price,img] = [props.cart,props.setCart,props.ID,props.name,props.price,props.img];
   return(
     <div className="shop-item">
       <div className="item-info">
-        <div>{name}</div>
-        <div>${(Math.round(100*(price*quantity))/100)}</div>
+        <div className="item-name">{name}</div>
+        <div className="item-price">${(Math.round(100*(price*quantity))/100)}</div>
+        <img className="item-img" src={img} alt={props.name} />
       </div>
       <input type={'number'} min={1} max={9} value={quantity} onChange={(e)=>{handleQuantityChange(parseInt(e.target.value),setQuantity)}} className="item-quantity" />
-      <button onClick={()=>{handleAddToCart(quantity,cart,setCart,ID,name,price)}} className="add-to-cart">Add to cart</button>
+      <button onClick={()=>{handleAddToCart(quantity,cart,setCart,ID,name,price,img)}} className="add-to-cart">Add to cart</button>
     </div>
   )
 };
@@ -20,7 +21,7 @@ let handleQuantityChange = function(val,setQuantity){
   setQuantity(val);
 };
 
-let handleAddToCart = function(quantity,cart,setCart,ID,name,price){
+let handleAddToCart = function(quantity,cart,setCart,ID,name,price,img){
   let itemExists=false;
   let index;
 
@@ -49,6 +50,7 @@ let handleAddToCart = function(quantity,cart,setCart,ID,name,price){
       name: name,
       price: price,
       quantity: quantity,
+      img: img,
     }));
   }
   

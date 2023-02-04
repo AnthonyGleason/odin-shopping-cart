@@ -9,13 +9,17 @@ export default function Checkout(){
     <div className='checkout'>
       {cart.map((item)=>{
         return(
-          <CheckoutItem name={item.name} ID={item.ID} key={item.ID} price={item.price} quantity={item.quantity} />
+          <CheckoutItem name={item.name} ID={item.ID} key={item.ID} price={item.price} quantity={item.quantity} img={item.img} />
         )
       })}
       <div className="total">{calcTotal(cart)}</div>
+      <form className="checkout-form">
+        <button type='button' onClick={()=>{window.location.href = '/home'}}>Complete Checkout</button>
+      </form>
     </div>
   )
 };
+
 
 let calcTotal = function(cart){
   let totalPrice=0;
@@ -24,6 +28,6 @@ let calcTotal = function(cart){
     totalPrice=totalPrice+(item.price*item.quantity);
     totalItems=totalItems+item.quantity;
   })
-  let message = ('Total Price: $'+ totalPrice +' Total Items: '+totalItems);
+  let message = ('Total Price: $'+ (Math.round(100*(totalPrice))/100) +' Total Items: '+totalItems);
   return message;
-}
+};

@@ -7,7 +7,7 @@ export default function ShopContainer(props){
     <div className="shop-item-container">
       {shopArray.map((item)=>{
         return(
-          <ShopItem cart={cart} setCart={setCart} key={item.ID} ID={item.ID} name={item.name} price={item.price} />
+          <ShopItem cart={cart} setCart={setCart} img={item.img} key={item.ID} ID={item.ID} name={item.name} price={item.price} />
         )
       })}
     </div>
