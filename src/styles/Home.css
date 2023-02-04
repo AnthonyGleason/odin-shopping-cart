@@ -4,19 +4,12 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 0.1fr 1fr 0.1fr;
-  grid-template-areas: 
-  "nav"
-  "content"
-  "footer";
-}
-.nav{
-  grid-area: nav;
 }
 .home,
-.about{
+.about,
+.shop-sticky{
   display: flex;
   justify-content: center;
-}
-.footer{
-  grid-area: footer;
+  padding: 10px;
+  margin: 5px;
 }

@@ -4,9 +4,6 @@ import { Link } from "react-router-dom";
 import ShopContainer from "./ShopContainer";
 import Cart from "./Cart.js";
 
-//import css
-import '../styles/Shop.css'
-
 //import images
 import binders from "../assets/binders.jpg";
 import crayons from "../assets/crayons.jpg";

@@ -11,7 +11,7 @@ import Checkout from './Checkout.js';
 import CheckoutSuccess from "./CheckoutSuccess.js";
 
 //import css
-import '../styles/RouteSwitch.css';
+import '../styles/Home.css';
 
 export default function RouteSwitch(){
   //sets initial load page to be /home

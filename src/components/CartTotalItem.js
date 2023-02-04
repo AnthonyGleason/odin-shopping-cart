@@ -6,7 +6,7 @@ export default function CartTotalItem(props){
     <div className="cart-total" style={{display: 'none'}}>
       <div className="item-name">Cart Total</div>
       <div className="item-price">Total: ${(Math.round(100*(calcTotalPrice(cart)))/100)}</div>
-      <div className="item-quantity">{calcTotalQuantity(cart)} items in cart</div>
+      <div className="item-quantity">{calcTotalQuantity(cart)} item(s) in cart</div>
       <button className="remove-item" onClick={()=>{handleItem(setCart,cart)}}>Remove All Items</button>
     </div>
   )
