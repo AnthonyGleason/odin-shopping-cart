@@ -53,5 +53,7 @@ let handleAddToCart = function(quantity,cart,setCart,ID,name,price,img){
       img: img,
     }));
   }
-  
+  //finally hide empty cart notice
+  document.querySelector('.cart-notice').style.display='none';
+  document.querySelector('.cart-total').style.display='flex';
 };

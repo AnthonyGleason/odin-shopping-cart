@@ -25,4 +25,8 @@ let handleItem = function(setCart,cart,ID){
   let a = cart.slice(0,index);
   let b = cart.slice(index+1,cart.length);
   setCart(a.concat(b));
+
+  //if cart will be empty add cart is currently empty notice
+  if (cart.length===1) document.querySelector('.cart-notice').style.display='flex';
+  if (cart.length===1) document.querySelector('.cart-total').style.display='none';
 }

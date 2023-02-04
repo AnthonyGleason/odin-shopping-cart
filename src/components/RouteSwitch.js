@@ -10,6 +10,9 @@ import About from "./About.js";
 import Checkout from './Checkout.js';
 import CheckoutSuccess from "./CheckoutSuccess.js";
 
+//import css
+import '../styles/RouteSwitch.css';
+
 export default function RouteSwitch(){
   //sets initial load page to be /home
   useEffect(()=>{
@@ -17,7 +20,7 @@ export default function RouteSwitch(){
   },[])
 
   return(
-    <>
+    <div className='body'>
       <Nav />
       <BrowserRouter>
         <Routes>
@@ -29,6 +32,6 @@ export default function RouteSwitch(){
         </Routes>
       </BrowserRouter>
       <Footer />
-    </>
+    </div>
   )
 };
