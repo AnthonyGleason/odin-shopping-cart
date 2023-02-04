@@ -14,7 +14,7 @@ export default function Checkout(){
       })}
       <div className="total">{calcTotal(cart)}</div>
       <form className="checkout-form">
-        <button type='button' onClick={()=>{window.location.href = '/home'}}>Complete Checkout</button>
+        <button type='button' onClick={()=>{window.location.href = '/checkout/success'}}>Complete Checkout</button>
       </form>
     </div>
   )
