@@ -36,6 +36,7 @@ let handleAddToCart = function(quantity,cart,setCart,ID,name,price,img){
     //run if item exists in cart
     //get cart item that needs updating
     let item = cart[index];
+    if (item.quantity+quantity>9||item.quantity+quantity<1) return 0;
     //update the cart item quantity
     item.quantity=item.quantity+quantity;
     //make cart slices

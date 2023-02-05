@@ -1,5 +1,5 @@
-import { BrowserRouter,Routes,Route,redirect} from "react-router-dom";
-import {React, useEffect} from 'react';
+import { BrowserRouter,Routes,Route} from "react-router-dom";
+import {React} from 'react';
 
 //import components
 import Nav from './Nav.js';
@@ -14,17 +14,13 @@ import CheckoutSuccess from "./CheckoutSuccess.js";
 import '../styles/Home.css';
 
 export default function RouteSwitch(){
-  //sets initial load page to be /home
-  useEffect(()=>{
-    redirect('/home');
-  },[])
 
   return(
     <div className='body'>
       <Nav />
       <BrowserRouter>
         <Routes>
-          <Route path='/home' element={<App />} />
+          <Route path='/' element={<App />} />
           <Route path='/shop' element={<Shop />} />
           <Route path='/checkout' element={<Checkout />} />
           <Route path='/about' element={<About />} />

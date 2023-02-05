@@ -14,12 +14,20 @@ export default function CartItem(props){
   )
 }
 
-let handleQuantityChange = function(newQuantity){
+let handleQuantityChange = function(newQuantity,cart,setCart,ID){
   if(newQuantity>9 || newQuantity < 1) return 0;
-  //find item index
-  //split cart into 3 slices
-  //update the slice with the quantity
-  //setCart keeping slices in same order
+  let index;
+  cart.forEach((item)=>{
+    if(item.ID===ID) index=cart.indexOf(item);
+  });
+  //get cart item that needs updating
+  let item = cart[index];
+  //update the cart item quantity
+  item.quantity=parseInt(newQuantity);
+  let a = cart.slice(0,index);
+  let b = item;
+  let c = cart.slice(index+1,cart.length);
+  setCart(a.concat(b).concat(c));
 };
 
 let handleItem = function(setCart,cart,ID){
