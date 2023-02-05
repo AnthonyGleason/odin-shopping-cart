@@ -8,7 +8,7 @@ export default function CartItem(props){
     <div className="cart-item">
       <div className="item-name">{name}</div>
       <div className="item-price">Subtotal: ${(Math.round(100*(price*quantity))/100)}</div>
-      <input value={quantity} type='number' min={1} max={9} onChange={(e)=>{handleQuantityChange(e.target.value,cart,setCart,ID)}} className="item-quantity" />in cart
+      <input value={quantity} type='number' min={1} max={9} onChange={(e)=>{handleQuantityChange(e.target.value,cart,setCart,ID)}} className="item-quantity" />{quantity}in cart
       <button className="remove-item" onClick={()=>{handleItem(setCart,cart,ID)}}>Remove</button>
     </div>
   )
