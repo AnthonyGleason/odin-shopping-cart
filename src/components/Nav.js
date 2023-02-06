@@ -1,19 +1,17 @@
-import React from "react";
+import React from 'react';
 
 //import css
-import '../styles/Nav.css';
+import '../styles/nav.css';
 
 export default function Nav(){
   return(
-    <div className="nav">
-      <a href={'/'}>
-        <div className='nav-title'>School Supplies</div>
-      </a>
-      <ul className="button-container">
-        <a href={'/'}><li>Home</li></a>
-        <a href={'/about'}><li>About</li></a>
-        <a href={'/shop'}><li>Shop</li></a>
+    <div className='nav'>
+      <ul className='nav-buttons'>
+        <a href='/'><li>Home</li></a>
+        <a href='/shop'><li>Shop</li></a>
+        <a href='/about'><li>About</li></a>
       </ul>
+      <a href='/'><div className='nav-logo'>Odin School Supplies</div></a>
     </div>
   )
 }
