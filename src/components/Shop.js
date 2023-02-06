@@ -11,11 +11,7 @@ import '../styles/shop.css';
 import shopArray from '../shopItems';
 
 export default function Shop(){
-  const [cart,setCart] = useState([{
-    name: 'Pencils',
-    price: 0.99,
-    quantity: 2,
-  }]);
+  const [cart,setCart] = useState([]);
   let totalPrice=0;
   let totalItems=0;
   return(
@@ -24,27 +20,27 @@ export default function Shop(){
         {
           shopArray.map((item)=>{
             return(
-              <ShopItem cart={cart} setCart={setCart} img={item.img} name={item.name} price={item.price} desc={item.desc} id={item.ID} key={item.ID} />
+              <ShopItem cart={cart} setCart={setCart} img={item.img} name={item.name} price={item.price} desc={item.desc} id={item.ID} key={Math.random()} />
             )
           })
         }
       </div>
       <div className='cart'>
-        <div className='quantity'> Total Items: 0</div>
         <div className='cart-item-container'>
         {
           cart.map((item)=>{
             totalPrice=totalPrice+(item.price*item.quantity);
             totalItems=totalItems+item.quantity;
             return(
-              <CartItem name={item.name} price={item.price} quantity={item.quantity} key={item.ID} />
+              <CartItem name={item.name} price={item.price} quantity={item.quantity} key={Math.random()} />
             )
           })
         }
         </div>
-        <div className='total-cost'>Total Cost: ${totalPrice}</div>
-        <div className='total-items'>Total Items: </div>
-        <button className='checkout-button' type='submit'>Checkout</button>
+        <div className='total-cost'>Total Cost: ${(Math.round(100*(totalPrice))/100)}</div>
+        <div className='total-items'>Total Items: {totalItems}</div>
+        <button className='checkout-button' type='button'>Checkout</button>
+        <button onClick={()=>{setCart([])}}className='remove-button' type='button'>Remove All</button>
       </div>
     </div>
   )
