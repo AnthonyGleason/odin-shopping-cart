@@ -7,7 +7,6 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  justify-self: center;
 }
 .shop-item-img{
   height: 200px;

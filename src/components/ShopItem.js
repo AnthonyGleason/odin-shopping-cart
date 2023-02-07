@@ -35,8 +35,11 @@ let handleAdd = function(ID,name,price,quantity,cart,setCart){
     //run if item exists in cart
     //get cart item that needs updating
     let item = cart[index];
+    let tempQuantity=item.quantity+quantity;
+    //check to see if new quantity is over or under accepted range
+    if (tempQuantity>9||tempQuantity<1) return 0;
     //update the cart item quantity
-    item.quantity=item.quantity+quantity;
+    item.quantity=tempQuantity;
     //make cart slices
     let a = cart.slice(0,index);
     let b = item;
