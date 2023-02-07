@@ -1,4 +1,5 @@
 import {React, useState} from 'react';
+import {Link} from 'react-router-dom';
 
 //import components
 import CartItem from './CartItem';
@@ -20,7 +21,7 @@ export default function Shop(){
         {
           shopArray.map((item)=>{
             return(
-              <ShopItem cart={cart} setCart={setCart} img={item.img} name={item.name} price={item.price} desc={item.desc} id={item.ID} key={Math.random()} />
+              <ShopItem cart={cart} setCart={setCart} img={item.img} name={item.name} price={item.price} desc={item.desc} ID={item.ID} key={Math.random()} />
             )
           })
         }
@@ -32,7 +33,7 @@ export default function Shop(){
             totalPrice=totalPrice+(item.price*item.quantity);
             totalItems=totalItems+item.quantity;
             return(
-              <CartItem name={item.name} price={item.price} quantity={item.quantity} key={Math.random()} />
+              <CartItem ID={item.ID} name={item.name} price={item.price} quantity={item.quantity} key={Math.random()} cart={cart} setCart={setCart} />
             )
           })
         }

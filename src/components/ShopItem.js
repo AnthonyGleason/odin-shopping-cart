@@ -25,13 +25,13 @@ let handleQuantityChange = function(newQuantity,setQuantity){
 }
 
 let handleAdd = function(ID,name,price,quantity,cart,setCart){
-  let index = undefined;
+  let index;
   
   cart.forEach((item)=>{
     if (item.ID===ID) index=cart.indexOf(item);
-  })
+  });
   //if item already exists update quantity at index
-  if (index>=0){
+  if (cart[index]){
     //run if item exists in cart
     //get cart item that needs updating
     let item = cart[index];

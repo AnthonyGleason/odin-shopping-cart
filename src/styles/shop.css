@@ -18,6 +18,9 @@
   width: 10%;
   position: fixed;
 }
+.cart-item-info{
+  display: flex;
+}
 .shop-item-container{
   width: 100%;
   display: grid;
