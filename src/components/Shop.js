@@ -40,7 +40,9 @@ export default function Shop(){
         </div>
         <div className='total-cost'>Total Cost: ${(Math.round(100*(totalPrice))/100)}</div>
         <div className='total-items'>Total Items: {totalItems}</div>
-        <button className='checkout-button' type='button'>Checkout</button>
+        <Link to={'/checkout'} state={cart} className='shop-checkout'>
+          <button className='checkout-button' type='button'>Checkout</button>
+        </Link>
         <button onClick={()=>{setCart([])}}className='remove-button' type='button'>Remove All</button>
       </div>
     </div>
