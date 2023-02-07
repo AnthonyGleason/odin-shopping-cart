@@ -2,7 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: aliceblue;
+}
+body,
+#root{
+  height: 100vh;
+  width: 100vw;
 }
 .body{
   display: grid;
@@ -11,6 +15,28 @@
   grid-template-areas: 
   "nav nav"
   "content content";
+  height: 100%;
+  background-image: url('../assets/home.jpg');
+}
+.home{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0,0.4);
+}
+.home-title{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 35%;
+  padding-right: 35%;
+  height: 100px;
+  font-size:xx-large;
+  color: white;
+  font-weight: bolder;
+  border-radius: 15px;
+  background-color: rgba(0,0,0,0.7);
 }
 .nav{
   grid-area: nav;

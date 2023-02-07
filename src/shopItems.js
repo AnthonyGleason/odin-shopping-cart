@@ -14,21 +14,21 @@ let shopArray = [
     ID: 0,
     name: 'Pencils',
     price: 14.05,
-    desc: 'Bulk box of 150 pencils',
+    desc: 'A bulk box of 150 pencils.',
     img: pencils,
   },
   {
     ID: 1,
     name: 'Pens',
     price: 8.93,
-    desc: 'Pack of 12 black pens',
+    desc: 'A pack of 12 black pens.',
     img: pens
   },
   {
     ID: 2,
     name: 'Erasers',
     price: 4.99,
-    desc: 'Pack of 12 erasers',
+    desc: 'A pack of 12 erasers.',
     img: erasers,
   },
   {
