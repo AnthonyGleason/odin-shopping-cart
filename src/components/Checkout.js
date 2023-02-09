@@ -20,9 +20,9 @@ export default function Checkout(){
           )
         })}
       </div>
-      <div className='total-quantity'>Total Items: {totalItems}</div>
-      <div className='total-price'>Total Price: ${totalPrice}</div>
-      <Link to={'/checkout/success'}><button className='complete-checkout'>Complete Checkout</button></Link>
+      <div className='total-quantity'>Total Item(s): {totalItems}</div>
+      <div className='total-price'>Total Cost: ${(Math.round(100*(totalPrice))/100)}</div>
+      <Link to={'/checkout/success'} className='checkout-link'><button className='complete-checkout'>Complete Checkout</button></Link>
     </div>
   )
 }

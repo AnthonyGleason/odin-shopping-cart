@@ -10,48 +10,123 @@
   background-color: rgba(0,0,0,0.4);
 }
 .cart{
-  height: max-content;
-  border: 3px solid black;
+  height: 100vh;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  right: 0;
+  top: 0;
+  margin-top: 5px;
+  width: 150px;
 }
 .shop-item-container,
 .shop-item,
 .cart-item,
-.cart-item *{
-  background-color: rgba(255, 255, 255, 0.0)
+.cart-item *,
+.cart-item-container,
+.total-cost,
+.total-items,
+.shop-checkout,
+.checkout-button,
+.remove-button,
+.remove-button-container,
+.complete-checkout,
+.checkout-item-container *,
+.total-quantity,
+.total-price{
+  color: white;
+  background-color: rgba(255, 255, 255, 0.0);
 }
 .shop-item *,
 .cart div,
 .checkout-complete{
   text-align: center;
-}
-.shop-item{
   display: flex;
   justify-content: center;
-  flex-direction: column;
-  height: max-content;
-  width: max-content;
+  padding: 5px;
 }
-.checkout-complete{
+.checkout-complete,
+.remove-button{
   display: flex;
   justify-content: center;
   align-items: center;
+  width: fit-content;
+}
+.checkout-button,
+.remove-button{
+  padding: 5px;
+  margin: 5px;
+}
+.shop-checkout{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.cart-item,
+.cart-item-container{
+  display: flex;
+  flex-direction: column;
 }
 .shop-item-img{
   height: 200px;
-  width: 200px;
 }
-.cart{
-  right: 0;
-  height: 100%;
-  width: 10%;
-  position: fixed;
-}
-.cart-item-info{
+.shop{
   display: flex;
+  justify-content: space-between;
 }
 .shop-item-container{
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: max-content;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.shop-item{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  margin: 5px;
+  background-color: rgba(0,0,0,0.4);
+  border: 2px solid black;
+}
+.shop-item *{
+  background-color: rgba(0,0,0,0);
+  color: white;
+  font-size: medium;
+  margin: 2px;
+  padding: 5px;
+}
+.shop-button-container button:hover,
+.checkout-button:hover,
+.remove-button:hover,
+.complete-checkout:hover{
+  cursor: pointer;
+}
+.cart-item,
+.total-quantity,
+.total-price,
+.checkout-link,
+.cart-item-quantity,
+.checkout-item-container,
+.complete-checkout,
+.cart-item-cost{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.cart-item{
+  width: 100%;
+  padding: 10px;
+}
+.cart-item-cost,
+.total-quantity,
+.cart-item-name{
+  padding: 5px;
+}
+.complete-checkout{
+  margin: 10px;
+  padding: 10px;
+  background-color: black;
 }

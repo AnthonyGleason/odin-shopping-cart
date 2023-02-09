@@ -43,7 +43,9 @@ export default function Shop(){
         <Link to={'/checkout'} state={cart} className='shop-checkout'>
           <button className='checkout-button' type='button'>Checkout</button>
         </Link>
-        <button onClick={()=>{setCart([])}}className='remove-button' type='button'>Remove All</button>
+        <div classname='remove-button-container'>
+          <button onClick={()=>{setCart([])}}className='remove-button' type='button'>Remove All</button>
+        </div>
       </div>
     </div>
   )

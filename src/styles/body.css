@@ -3,10 +3,13 @@
   padding: 0;
   box-sizing: border-box;
 }
-body,
-#root{
-  height: 100vh;
-  width: 100vw;
+button,
+input{
+  border: 2px solid black;
+}
+button:hover,
+input:hover{
+  background-color: black;
 }
 .body{
   display: grid;
@@ -15,15 +18,19 @@ body,
   grid-template-areas: 
   "nav nav"
   "content content";
-  height: 100%;
   background-image: url('../assets/home.jpg');
 }
 .home,
-.about{
+.about,
+.checkout-complete{
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: rgba(0,0,0,0.4);
+}
+.body{
+  height: 100vh;
 }
 .home-title,
 .about a,

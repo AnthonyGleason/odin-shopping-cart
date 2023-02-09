@@ -6,6 +6,9 @@
   background-color: rgba(0,0,0,0);
   color: white;
 }
+.nav-buttons a{
+  padding: 20px;
+}
 .nav-buttons a:hover{
   background-color: rgba(0,0,0,1);
   height: 100%;
@@ -14,11 +17,8 @@
   display: flex;
   justify-content: space-between;
   top: 0;
-  position: sticky;
-  margin: 20px;
   background-color: rgba(0,0,0,0.5);
-  border: 5px solid black;
-  border-radius: 8px;
+  height: 100px;
 }
 .nav-buttons{
   display: flex;
@@ -27,8 +27,7 @@
   align-items: center;
   font-size: larger;
 }
-.nav-buttons a {
-}
+
 .nav a{
   display: flex;
   justify-content: center;
