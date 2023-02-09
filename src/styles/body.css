@@ -18,25 +18,31 @@ body,
   height: 100%;
   background-image: url('../assets/home.jpg');
 }
-.home{
+.home,
+.about{
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: rgba(0,0,0,0.4);
 }
-.home-title{
+.home-title,
+.about a,
+.checkout-text{
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-left: 35%;
-  padding-right: 35%;
+  padding-left: 200px;
+  padding-right: 200px;
   height: 100px;
   font-size:xx-large;
   color: white;
   font-weight: bolder;
   border-radius: 15px;
   background-color: rgba(0,0,0,0.7);
+}
+.about a{
+  text-align: center;
 }
 .nav{
   grid-area: nav;
