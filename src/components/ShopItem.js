@@ -1,26 +1,7 @@
 import {React,useState} from 'react';
 
-export default function ShopItem(props){
-  //destructure props
-  const [ID, name, img, price, desc]=[props.ID,props.name,props.img,props.price,props.desc]
-  const [cart,setCart] = [props.cart,props.setCart];
-  const [quantity,setQuantity] = useState(1);
-  return(
-    <div className='shop-item'>
-      <img className='shop-item-img' src={img} alt={'test'} />
-      <div className='shop-item-name'>{name}</div>
-      <div className='shop-item-desc'>{desc}</div>
-      <div className='shop-item-price'>${price}</div>
-      <div className='shop-button-container'>
-        <button type='submit' onClick={()=>handleAdd(ID,name,price,quantity,cart,setCart)}>Add to cart</button>
-        <input onChange={(e)=>handleQuantityChange(parseInt(e.target.value),setQuantity)} type={'number'} value={quantity} min={1} max={9} />
-      </div>
-    </div>
-  )
-}
-
-let handleQuantityChange = function(newQuantity,setQuantity){
-  if (newQuantity<1 || newQuantity>9) return 0;
+export let handleQuantityChange = function(newQuantity,setQuantity){
+  if (newQuantity<1 || newQuantity>9) return 1;
   setQuantity(newQuantity);
 }
 
@@ -54,6 +35,27 @@ let handleAdd = function(ID,name,price,quantity,cart,setCart){
         quantity: quantity,
       })
     )
-  }
-  
+  } 
 }
+
+
+export default function ShopItem(props){
+  //destructure props
+  const [ID, name, img, price, desc]=[props.ID,props.name,props.img,props.price,props.desc]
+  const [cart,setCart] = [props.cart,props.setCart];
+  const [quantity,setQuantity] = useState(1);
+
+  return(
+    <div className='shop-item'>
+      <img className='shop-item-img' src={img} alt={'test'} />
+      <div className='shop-item-name'>{name}</div>
+      <div className='shop-item-desc'>{desc}</div>
+      <div className='shop-item-price'>${price}</div>
+      <div className='shop-button-container'>
+        <button type='submit' onClick={()=>handleAdd(ID,name,price,quantity,cart,setCart)}>Add to cart</button>
+        <input onChange={(e)=>handleQuantityChange(parseInt(e.target.value),setQuantity)} type={'number'} value={quantity} min={1} max={9} />
+      </div>
+    </div>
+  )
+}
+

@@ -1,5 +1,6 @@
 import { BrowserRouter,Routes,Route} from "react-router-dom";
 import {React} from 'react';
+import {useState} from 'react';
 
 //import components
 import App from './App.js';
@@ -12,6 +13,8 @@ import CheckoutComplete from "./CheckoutComplete.js";
 import '../styles/body.css';
 
 export default function RouteSwitch(){
+    
+  const [cart,setCart] = useState([]);
 
   return(
     <div className='body'>
@@ -19,7 +22,7 @@ export default function RouteSwitch(){
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<App />} />
-          <Route path='/shop' element={<Shop />} />
+          <Route path='/shop' cart={cart} setCart={setCart} element={<Shop />} />
           <Route path='/about' element={<About />} />
           <Route path='/checkout' element={<Checkout />} />
           <Route path='/checkout/success' element={<CheckoutComplete />} />

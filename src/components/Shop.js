@@ -11,8 +11,7 @@ import '../styles/shop.css';
 //import shop item array
 import shopArray from '../shopItems';
 
-export default function Shop(){
-  const [cart,setCart] = useState([]);
+export default function Shop({cart,setCart}){
   let totalPrice=0;
   let totalItems=0;
   return(
